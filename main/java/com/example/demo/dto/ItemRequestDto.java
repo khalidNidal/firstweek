@@ -3,7 +3,13 @@ package com.example.demo.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.Positive;
 import jakarta.validation.constraints.PositiveOrZero;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 
+@Getter
+@Setter
+@NoArgsConstructor
 public class ItemRequestDto {
 
     @NotBlank(message = "itemName is required")
@@ -14,13 +20,4 @@ public class ItemRequestDto {
 
     @Positive(message = "price must be > 0")
     private double price;
-
-    public String getItemName() { return itemName; }
-    public void setItemName(String itemName) { this.itemName = itemName; }
-
-    public int getQuantity() { return quantity; }
-    public void setQuantity(int quantity) { this.quantity = quantity; }
-
-    public double getPrice() { return price; }
-    public void setPrice(double price) { this.price = price; }
 }
